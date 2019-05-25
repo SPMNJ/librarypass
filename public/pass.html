@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Passes - RV Library Pass Manager</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="vendor/JsBarcode/JsBarcode.all.min.js"></script>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script src="js/main.js"></script>
+<!--===============================================================================================-->
+</head>
+<body>
+	<div class="limiter">
+		<div class="content-container" style="background-image: url('images/bg-01.jpg');">
+			<div class="wrap-content">
+				<div id="content">
+					<form id="get-passes" class="form">
+					<span class="title p-t-5 p-b-5">
+						Welcome <? getname(id).split(" ")[0] ?>
+					</span>
+					<span class="subtitle">
+						<a onClick="logout()">Not You, Click Here</a>
+					</span>
+					<div id="info" class="warning" style="display: none">
+					
+					</div>
+					<div id="passes">
+					<div class="block-content">
+						<div class="block-title">BLOCK 1</div>
+						<div class="line"></div>
+						<div class="block-pass">
+						<div class="pass-login-form-btn">
+						<div class="pass-form-btn">
+							SHOW PASS
+						</div>
+						</div>
+						</div>
+						</div>
+					<div class="block-content">
+						<div class="block-title">BLOCK 2</div>
+						<div class="line"></div>
+						<div class="block-pass">
+						<div class="pass-login-form-btn">
+						<div class="pass-form-btn">
+							SHOW PASS
+						</div>
+						</div>	
+						</div>
+						</div>
+					<div class="block-content">
+						<div class="block-title">BLOCK 3C</div>
+						<div class="line"></div>
+						<div class="block-pass">
+						<div class="pass-login-form-btn">
+						<div class="pass-form-btn">
+							SHOW PASS
+						</div>
+						</div>	
+						</div>
+						</div>
+					<div class="block-content">
+						<div class="block-title">BLOCK 3D</div>
+						<div class="line"></div>
+						<div class="block-pass">
+						<div class="pass-login-form-btn">
+						<div class="pass-form-btn">
+							SHOW PASS
+						</div>
+						</div>	
+						</div>
+						</div>
+					<div class="block-content">
+						<div class="block-title">BLOCK 4C</div>
+						<div class="line"></div>
+						<div class="block-pass">
+						<div class="pass-login-form-btn">
+						<div class="pass-form-btn">
+							SHOW PASS
+						</div>
+						</div>	
+						</div>
+						</div>
+					<div class="block-content">
+						<div class="block-title">BLOCK 4D</div>
+						<div class="line"></div>
+						<div class="block-pass">
+						<div class="pass-login-form-btn">
+						<div class="pass-form-btn">
+							SHOW PASS
+						</div>
+						</div>	
+						</div>
+						</div>
+					<div class="block-content">
+						<div class="block-title">BLOCK 5</div>
+						<div class="line"></div>
+						<div class="block-pass">
+						<div class="pass-login-form-btn">
+						<div class="pass-form-btn">
+							SHOW PASS
+						</div>
+						</div>	
+						</div>
+						</div>
+					</div>
+					<div class="container-login-form-btn">
+						<button id="get-passes-button" class="login-form-btn">
+							GET PASSES
+						</button>
+						<div id="your-passes" class="login-form-btn">
+							YOUR PASSES
+						</div>
+						<div class="btn-loading" style="display: none">
+								<img src="images/Rolling-red.svg" alt="" height="40px" width="40px">
+						</div>
+					</div>
+				</form>
+					
+				</div>
+			</div>
+			<div id="popup">
+				<div id="confirm-passes"> 
+					<div class="popup-title">
+						Get Multiple Passes?
+					</div>
+					<div id="dialoge" class="m-t-10 m-b-10 notice p-l-5">
+						You are currently adding more than one pass to your account. Please make sure that you actually wish to use this pass as repeatedly not using passes could result in losing access to the library. Signups are limited, so don't sign up if you aren't going to the library.
+					</div>
+					<div id="passes-own" class="list" style="display: none">
+						<div>You have the following pass/passes</div>
+						
+					</div>
+					<div id="selected-passes" class="list">
+						<div style="text-align: center">You selected the following pass/passes</div>
+					</div>
+					<div class="confirm-options"> 
+						Do you still want to create the passes?
+						<div class="container-confirm-btn">
+							<div id="confirm" class="confirm-btn">Yes</div>
+							<div id="cancel" class="confirm-btn">No</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--===============================================================================================-->
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	
+
+</body>
+</html>
